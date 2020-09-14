@@ -1,5 +1,6 @@
 // Write code under this line
-const getUserNames = array => array.map(({ name }) => name);
+const calculateTotalBalance = array =>
+  array.reduce((acc, { balance }) => acc + balance, 0);
 
 const users = [
   {
@@ -88,15 +89,5 @@ const users = [
   },
 ];
 
-// console.log(getName(users));
-console.log(getUserNames(users));
-
-/* [
-  "Moore Hensley",
-  "Sharlene Bush",
-  "Ross Vazquez",
-  "Elma Head",
-  "Carey Barr",
-  "Blackburn Dotson",
-  "Sheree Anthony",
-] */
+console.log(calculateTotalBalance(users));
+// 20916

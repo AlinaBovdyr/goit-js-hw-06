@@ -1,5 +1,8 @@
 // Write code under this line
-const getUserNames = array => array.map(({ name }) => name);
+const getNamesSortedByFriendsCount = array =>
+  [...array]
+    .sort((a, b) => a.friends.length - b.friends.length)
+    .map(({ name }) => name);
 
 const users = [
   {
@@ -88,15 +91,6 @@ const users = [
   },
 ];
 
-// console.log(getName(users));
-console.log(getUserNames(users));
+console.log(getNamesSortedByFriendsCount(users));
 
-/* [
-  "Moore Hensley",
-  "Sharlene Bush",
-  "Ross Vazquez",
-  "Elma Head",
-  "Carey Barr",
-  "Blackburn Dotson",
-  "Sheree Anthony",
-] */
+// [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]

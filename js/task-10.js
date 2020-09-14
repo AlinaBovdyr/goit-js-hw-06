@@ -1,5 +1,9 @@
 // Write code under this line
-const getUserNames = array => array.map(({ name }) => name);
+const getSortedUniqueSkills = array =>
+  array
+    .reduce((acc, { skills }) => [...acc, ...skills], [])
+    .filter((skill, index, [...skills]) => [...skills].indexOf(skill) === index)
+    .sort();
 
 const users = [
   {
@@ -88,15 +92,14 @@ const users = [
   },
 ];
 
-// console.log(getName(users));
-console.log(getUserNames(users));
-
-/* [
-  "Moore Hensley",
-  "Sharlene Bush",
-  "Ross Vazquez",
-  "Elma Head",
-  "Carey Barr",
-  "Blackburn Dotson",
-  "Sheree Anthony",
-] */
+console.log(getSortedUniqueSkills(users));
+/* [ 'adipisicing', 'amet',
+ 'anim', 'commodo',
+ 'culpa', 'elit',
+ 'ex', 'ipsum',
+ 'irure', 'laborum',
+ 'lorem', 'mollit',
+ 'non', 'nostrud',
+ 'nulla', 'proident',
+ 'tempor', 'velit',
+ 'veniam' ]; */
