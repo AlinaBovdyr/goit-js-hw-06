@@ -5,6 +5,13 @@ const getSortedUniqueSkills = array =>
     .filter((skill, index, [...skills]) => [...skills].indexOf(skill) === index)
     .sort();
 
+/*
+* Способ 2
+*
+* const getSortedUniqueSkills = array =>
+    Array.from(new Set(array.flatMap(({ skills }) => skills))).sort();
+*/
+
 const users = [
   {
     id: '701b29c3-b35d-4cf1-a5f6-8b12b29a5081',
@@ -93,6 +100,7 @@ const users = [
 ];
 
 console.log(getSortedUniqueSkills(users));
+
 /* [ 'adipisicing', 'amet',
  'anim', 'commodo',
  'culpa', 'elit',
